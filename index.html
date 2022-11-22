@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Simple Redirect</title>
+</head>
+<body>
+	<script>
+		function redirect(url) {
+			location.href = url;
+		}
+		//enter key event listener
+		document.addEventListener('keydown', function(event) {
+			if (event.key == 'Enter') {
+				redirect(document.getElementById('input').value);
+			}
+		});
+	</script>
+	<div class="wrap">
+		<div>
+			<input type="'text" id="input" placeholder="https://google.com">
+			<button onclick="redirect(document.getElementById('input').value)">GO</button>
+		</div>
+	</div>
+	<style>
+		.wrap {
+			height: 100vh;
+			width: 100vw;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.wrap div input {
+			height: 10vh;
+			width: 60vh;
+			border-radius: 10px;
+			font-size: 5vh;
+		}
+		.wrap div button {
+			height: 10vh;
+			width: 10vw;
+			font-size: 5vh;
+		}
+		body {
+			margin: 0px;
+		}
+	</style>
+</body>
+</html>
